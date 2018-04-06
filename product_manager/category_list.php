@@ -7,7 +7,7 @@
             <th>Name</th>
             <th>ID Number</th>
         </tr>        
-	<? php foreach ($categories as $category) : ?>
+	<?php foreach ($categories as $category) : ?>
 	<tr>
 	   <td>
            <?php echo $category['categoryName']; ?>
@@ -16,7 +16,7 @@
            <?php echo $category['categoryID']; ?>
 	   </td>
 	</tr> 
-	<? php endforeach; ?>       
+	<?php endforeach; ?>
 
     </table>
 
