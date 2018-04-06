@@ -5,14 +5,18 @@
     <table>
         <tr>
             <th>Name</th>
-            <th>&nbsp;</th>
+            <th>ID Number</th>
         </tr>        
 	<? php foreach ($categories as $category) : ?>
 	<tr>
-	    <a href="?category_id=<?php echo $category['categoryID']; ?>">
-                <?php echo $category['categoryName']; ?>
-            </a>
-	</tr>        
+	   <td>
+           <?php echo $category['categoryName']; ?>
+	   </td>
+	   <td>
+           <?php echo $category['categoryID']; ?>
+	   </td>
+	</tr> 
+	<? php endforeach; ?>       
 
     </table>
 
