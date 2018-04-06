@@ -59,7 +59,7 @@ if ($action == 'list_products') {
     $name = filter_input(INPUT_POST, 'name');
     $id = filter_input(INPUT_POST, 'id');
     if ($name == NULL || $id == NULL) {
-        $error = "Invalid product data. Check all fields and try again.";
+        $error = "Invalid data. Check all fields and try again.";
         include('../errors/error.php');
     } else {
         add_category($name, $id);
@@ -67,5 +67,15 @@ if ($action == 'list_products') {
     }
 } else if ($action == 'show_add_category') {
     include('category_add.php');
+} else if ($action == 'delete_category') {
+    $categoryName = filter_input(INPUT_POST, 'categoryName');
+    $categoryID = filter_input(INPUT_POST, 'categoryID');
+    if ($categoryID == NULL) {
+        $error = "Missing or incorrect category id.";
+        include('../errors/error.php');
+    } else {
+        delete_category($categoryID);
+        header('Location: .?action=list_categories');
+    }
 }
 ?>

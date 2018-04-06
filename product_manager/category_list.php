@@ -20,8 +20,6 @@
             <form action="." method="post">
                 <input type="hidden" name="action"
                        value="delete_category">
-                <input type="hidden" name="categoryName"
-                       value="<?php echo $category['categoryName']; ?>">
                 <input type="hidden" name="categoryID"
                        value="<?php echo $category['categoryID']; ?>">
                 <input type="submit" value="Delete">
