@@ -20,4 +20,14 @@ function get_category_name($category_id) {
     $category_name = $category['categoryName'];
     return $category_name;
 }
+
+function add_category($categoryName, $categoryID) {
+    global $db;
+    $query = 'INSERT INTO categories (categoryID, categoryName) VALUES (:categoryID, :categoryName)';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':categoryID', $categoryID);
+    $statement->bindValue(':categoryName', $categoryName);
+    $statement->execute();
+    $statement->closeCursor();
+}
 ?>
