@@ -18,7 +18,7 @@
         <br>
     </form>
     <p class="last_paragraph">
-        <a href="index.php?action=list_products">View Category List</a>
+        <a href="index.php?action=list_categories">View Category List</a>
     </p>
 
 </main>

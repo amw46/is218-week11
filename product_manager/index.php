@@ -65,5 +65,7 @@ if ($action == 'list_products') {
         add_category($name, $id);
         header('Location: .?action=list_categories');
     }
+} else if ($action == 'show_add_category') {
+    include('category_add.php');
 }
 ?>
