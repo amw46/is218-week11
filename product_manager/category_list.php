@@ -7,7 +7,13 @@
             <th>Name</th>
             <th>&nbsp;</th>
         </tr>        
-        <!-- add category rows here -->
+	<? php foreach ($categories as $category) : ?>
+	<tr>
+	    <a href="?category_id=<?php echo $category['categoryID']; ?>">
+                <?php echo $category['categoryName']; ?>
+            </a>
+	</tr>        
+
     </table>
 
     <h2>Add Category</h2>
