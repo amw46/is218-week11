@@ -55,5 +55,15 @@ if ($action == 'list_products') {
     $categories = get_categories();
     include('category_list.php');
 
-}    
+} else if ($action == 'add_category') {
+    $name = filter_input(INPUT_POST, 'name');
+    $id = filter_input(INPUT_POST, 'id');
+    if ($name == NULL || $id == NULL) {
+        $error = "Invalid product data. Check all fields and try again.";
+        include('../errors/error.php');
+    } else {
+        add_category($name, $id);
+        header('Location: .?action=list_categories');
+    }
+}
 ?>
