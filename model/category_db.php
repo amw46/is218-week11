@@ -34,8 +34,7 @@ function add_category($categoryName, $categoryID) {
 
 function delete_category($categoryID) {
     global $db;
-    $query = 'DELETE category
-                FROM categories 
+    $query = 'DELETE FROM categories 
                 WHERE categoryID = :categoryID';
     $statement = $db->prepare($query);
     $statement->bindValue( ':categoryID', $categoryID);
