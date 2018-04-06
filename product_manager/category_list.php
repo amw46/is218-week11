@@ -32,7 +32,7 @@
 
     <p><a href="?action=show_add_category">Add A Category</a></p>
 
-    <p><a href="?action=show_add_product">Add A Product</a></p>
+    <p><a href="?action=show_add_product_all">Add A Product</a></p>
 
     <p><a href="index.php?action=list_products">List Products</a></p>
 

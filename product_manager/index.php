@@ -17,6 +17,7 @@ if ($action == 'list_products') {
     if ($category_id == NULL || $category_id == FALSE) {
         $category_id = 1;
     }
+
     $category_name = get_category_name($category_id);
     $categories = get_categories();
     $products = get_products_by_category($category_id);
@@ -34,10 +35,13 @@ if ($action == 'list_products') {
         delete_product($product_id);
         header("Location: .?category_id=$category_id");
     }
+} else if ($action == 'show_add_product_all') {
+    $categories = get_categories();
+    include('product_add_all.php');
 } else if ($action == 'show_add_form') {
     $categories = get_categories();
-    include('product_add.php');    
-} else if ($action == 'add_product') {
+    include('product_add_pgspecific.php');
+}else if ($action == 'add_product') {
     $category_id = filter_input(INPUT_POST, 'category_id', 
             FILTER_VALIDATE_INT);
     $code = filter_input(INPUT_POST, 'code');

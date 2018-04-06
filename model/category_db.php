@@ -21,6 +21,19 @@ function get_category_name($category_id) {
     return $category_name;
 }
 
+function get_category_id($category_name) {
+    global $db;
+    $query = 'SELECT * FROM categories
+              WHERE categoryName = :category_name';
+    $statement = $db->prepare($query);
+    $statement->bindValue(':category_name', $category_name);
+    $statement->execute();
+    $category = $statement->fetch();
+    $statement->closeCursor();
+    $category_id = $category['categoryID'];
+    return $category_id;
+}
+
 function add_category($categoryName, $categoryID) {
     global $db;
     $query = 'INSERT INTO categories (categoryID, categoryName) 

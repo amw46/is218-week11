@@ -45,7 +45,7 @@
             </tr>
             <?php endforeach; ?>
         </table>
-        <p><a href="?action=show_add_form">Add Product</a></p>
+        <p><a href="?action=show_add_form&page=<?php echo $category_name;?>">Add A Product To This Category</a></p>
         <p class="last_paragraph"><a href="?action=list_categories">List Categories</a></p>        
     </section>
 </main>
