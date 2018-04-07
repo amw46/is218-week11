@@ -8,10 +8,11 @@
         <?php $page = filter_input(INPUT_GET, 'page');
               $cat_id = get_category_id($page);
         ?>
-        <select name="category_id">
-                <option value="<?php echo $cat_id; ?>" selected>
-                    <?php echo $page; ?>
-                </option>
+        <input type="hidden" name="category_id" value="<?php echo $cat_id; ?>">
+        <select name="category_id" disabled>
+            <option value="<?php echo $cat_id; ?>">
+                <?php echo $page; ?>
+            </option>
         </select>
         <br>
 
